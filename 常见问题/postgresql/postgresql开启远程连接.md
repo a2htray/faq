@@ -25,5 +25,5 @@ host    all             all             0.0.0.0/0               md5
 > 以下是本机执行的命令，根据个人实际情况修改
 
 ```bash
-sudo -u postgres /usr/lib/postgresql/9.5/bin/postgres -D /var/lib/pgsql/data
+sudo -u postgres /usr/lib/postgresql/9.5/bin/postgres -D /var/lib/pgsql/data restart
 ```
