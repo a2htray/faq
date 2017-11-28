@@ -7,5 +7,7 @@
 ## 流程图
 
 <div align=center>
+
 ![顺序结构push的操作流程](/编程问题/数据结构/栈/images/顺序结构push的操作流程.png)
+
 </div>
