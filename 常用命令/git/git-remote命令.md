@@ -12,3 +12,15 @@ git remote
 git remote add go git@github.com:a2htray/fqa.git
 ```
 
+## 重命名仓库
+
+```bash
+git remote rename go new-go
+```
+
+## 删除仓库
+
+```bash
+git remote rm new-go
+```
+
