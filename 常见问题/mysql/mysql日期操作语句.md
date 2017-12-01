@@ -11,3 +11,9 @@ SELECT `code` FROM `recommend_stocks`
 ```
 
 上述的`n`填写适当的值
+
+## 计算两个日期相差的天数
+
+```sql
+DATEDIFF(CURRENT(), `recommend_stocks`.`created_at`)
+```
