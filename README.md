@@ -1,2 +1,6 @@
 # Diary
-记录我们的新时代2017-11-07
+
+## IT 相关专业名称
+
+* AI:artificial intelligence:人工智能
+* ML:machine learning:机器学习
