@@ -1,14 +1,15 @@
-# Diary
+# A student's learning path
 
 > 为什么不写目录，因为我相信你一定是安装了`git-tree`。
 
 ## IT 相关专业名称
 
-|英文|简写|中文|
-|:--|:--|:--|
-|Artificial Intelligence|AI|人工智能|
-|Machine Learning|ML|机器学习|
-|Hash Collision||哈希冲突|
+|英文|简写|中文|解释|
+|:--|:--|:--|:--|
+|Artificial Intelligence|AI|人工智能||
+|Machine Learning|ML|机器学习||
+|Hash Collision||哈希冲突|不同关键字通过哈希运算取得相同的值|
+|Abstract Data Type|ADT|抽象数据类型|一个数学模型及定义在该模型上的操作|
 
 ## 扩展阅读
 
