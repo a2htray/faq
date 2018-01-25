@@ -15,6 +15,10 @@
 
 ## 扩展阅读
 
+## Ubuntu
+
+[Ubuntu手册](https://help.ubuntu.com/community/Links?action=show&redirect=CommandLineResources)
+
 ### 数据结构`B-树`
 
 [算法导论 之 B树(B-树) - 创建、插入[C语言]](http://blog.csdn.net/qifengzou/article/details/21079325)
