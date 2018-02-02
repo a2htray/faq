@@ -13,3 +13,5 @@
 |quite a few|相当多的|
 |rising and falling|上升和下落|
 |rush hours|高峰时间|
+|get into the details/go into the details|逐一述说|
+|get into detail/go into detail|逐一述说|

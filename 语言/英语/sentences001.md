@@ -18,3 +18,13 @@
 * In the UK I think we refer the non-rush hour time as `off-peak`.
 
 > 在英国，我认为我们更偏爱使用`off-peak`来表示不是高峰期的那些时间。
+
+* I can easily imagine a native speaker using it, probably in an attempt at humor.
+
+> 我能很容易想到如果一个本地人使用了这个单词，可能就是为了搞点小幽默。
+
+* So I use a plural from the verb.
+
+> 所以我使用了这个动词的复数形式。
+
+* My experiense in marketing and graphic design makes me an excellent candidate for this position.

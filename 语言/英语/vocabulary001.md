@@ -43,6 +43,26 @@
 |gratitude|感激|
 |detach|使...分开|
 |detached|独立|
+|weird|古怪的，奇怪的|
+|ambiguous|不确定的、不清楚的|
+|indicate|指示、说明|
+|plural|复数|
+|candidate|候选人|
+|excellent|优秀、卓越|
+|incounter/incountered|撞见、偶尔发现|
+|gap|缺口、裂口|
+|well-being|幸福、安康|
+|reveal|揭露、揭示|
+|terminology|术语|
+|friction|摩擦、冲突|
+|trademark|商标|
+|evolve|成长、进化|
+|fragile|易碎的|
+|ploymorphic|多种形态的|
+|hierarchy|结构、体系|
+|appropriate|合适的、恰当的|
+|equatable|相当的、可比的|
+
 
 
 
