@@ -21,8 +21,22 @@
 
 ### 数据结构`B-树`
 
-[算法导论 之 B树(B-树) - 创建、插入[C语言]](http://blog.csdn.net/qifengzou/article/details/21079325)
+[算法导论 之 B树(B-树) - 创建、插入`C语言`](http://blog.csdn.net/qifengzou/article/details/21079325)
 
-### 编辑工具
+### 编程语言
+
+[Haskell `翻译中`](https://github.com/a2htray/cn-haskell-book)
+
+[Tutorialspoint Kotlin `想学`](https://www.tutorialspoint.com/kotlin/index.htm)
+
+### 工具
+
+[wordreference 在线英语词典](http://www.wordreference.com/enzh/)
 
 [xianbai的Markdown教程](http://xianbai.me/learn-md/article/about/readme.html)
+
+### 杂
+
+[wordreference]()
+
+[科学公园](http://www.ikexue.org)
