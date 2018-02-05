@@ -28,3 +28,10 @@
 > 所以我使用了这个动词的复数形式。
 
 * My experiense in marketing and graphic design makes me an excellent candidate for this position.
+
+* A Haskell Module is **a collection of** related functions, types and typeclasses.
+
+* Each of them has some sort of purpose.
+
+* Because of Haskell great type system that allows us to know a lot about functions
+just by knowing its type declaration.

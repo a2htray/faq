@@ -62,6 +62,46 @@
 |hierarchy|结构、体系|
 |appropriate|合适的、恰当的|
 |equatable|相当的、可比的|
+|manageable|可管理的|
+|manipulate|操作、控制|
+|concurrent|并发的、一致的|
+|approximately|大约、大概|
+|declaration|定义|
+|impact|影响、作用|
+|destructive|破坏性、毁灭性|
+|breast|乳房|
+|prostate|前列腺|
+|overtake|超过|
+|*press*|挤、压|
+|*press*|媒体、新闻媒体|
+|evidence|迹象、证据|
+|expectancy|n:预期、预计|
+|purist|学者|
+|corpus|文集|
+|portion|部分、一份|
+|annual|年度的|
+|aim|宗旨、目标|
+|foster|促进、鼓励|
+|garment|衣服|
+|controversy|争议|
+|emerge|出现、兴起|
+|divisive|破坏团结、引起分歧|
+|bitterly|尖锐地、情感强烈地|
+|debate|争论、讨论|
+|islamic|伊斯兰的，回族的|
+|puberty|青春期|
+|muslim|穆斯林|
+|secular|adj:世俗的、尘世的|
+|secular-minds|n:世俗的主流思想|
+|ban|禁止|
+|*weigh*|v:称重、重量为|
+|*weigh*|v:权衡、考虑|
+|*head*|adj:主要的、首位的;v:领导、主管|
+|agency|代理机构|
+|campaign|v:参与竞选;n:运动、活动|
+|initiative|n:率先、主动性|
+|abuse|n:虐待、辱骂、谩骂|
+|society|n:社会、协会|
 
 
 
