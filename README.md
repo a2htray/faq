@@ -11,7 +11,7 @@
 |Hash Collision||哈希冲突|不同关键字通过哈希运算取得相同的值|
 |Abstract Data Type|ADT|抽象数据类型|一个数学模型及定义在该模型上的操作|
 |Structured Value||结构类型|相对应的是atomic value(原子类型)|
-|Loosely Coupled|低耦合|
+|Loosely Coupled||低耦合|
 
 
 ## 扩展阅读

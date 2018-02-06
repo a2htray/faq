@@ -21,3 +21,11 @@
 |at each age group|在每个年龄段|
 |the islamic world|在伊斯兰世界中|
 |back down|放弃|
+|deep root|根深蒂固|
+|land at|登陆|
+|risk taking|承担风险|
+|open up|开放|
+|result in|导致|
+|a slew of|大量的...|
+|half the battle|成功了一半|
+|as the side note|从另一方面说|

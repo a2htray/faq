@@ -100,11 +100,31 @@
 |agency|代理机构|
 |campaign|v:参与竞选;n:运动、活动|
 |initiative|n:率先、主动性|
-|abuse|n:虐待、辱骂、谩骂|
-|society|n:社会、协会|
-
-
-
+|[abuse](http://www.wordreference.com/enzh/abuse)|n:虐待、辱骂、谩骂;v:过度使用、滥用|
+|[society](http://www.wordreference.com/enzh/society)|n:社会、协会|
+|[lesson](http://www.wordreference.com/enzh/lesson)|n:经验、教训|
+|[output](http://www.wordreference.com/enzh/output)|n:前哨、警戒部队|
+|[reminder](http://www.wordreference.com/enzh/reminder)|n:引起人回忆的事物|
+|[hater](http://www.wordreference.com/enzh/hater)|n:厌恶者、憎恶者|
+|[cheater](http://www.wordreference.com/enzh/cheater)|n:骗子|
+|[ingrate](http://www.wordreference.com/enzh/ingrate)|n:忘恩负义的人|
+|[airfield](http://www.wordreference.com/enzh/airfield)|n:飞机场|
+|[coral](http://www.wordreference.com/enzh/coral)|n:珊瑚|
+|[speck](http://www.wordreference.com/enzh/speck)|n:斑点|
+|[maritime](http://www.wordreference.com/enzh/maritime)|adj:海上的|
+|[swagger](http://www.wordreference.com/enzh/swagger)|v:大摇大摆地走，神气十足地走，趾高气昂地走|
+|[patriotism](http://www.wordreference.com/enzh/patriotism)|n:爱国主义|
+|[gunboat](http://www.wordreference.com/enzh/gunboat)|n:炮艇|
+|[missile](http://www.wordreference.com/enzh/missile)|n:导弹|
+|[resident](http://www.wordreference.com/enzh/resident)|n:居民|
+|[refuel](http://www.wordreference.com/enzh/refuel)|v:补给|
+|[sad](http://www.wordreference.com/enzh/sad)|伤心、不幸|
+|[industry](http://www.wordreference.com/enzh/industry)|行业|
+|[said](http://www.wordreference.com/enzh/said)|adj:提到的|
+|[occasionally](http://www.wordreference.com/enzh/occasionally)|偶尔|
+|[invade](http://www.wordreference.com/enzh/invade)|入侵|
+|[retrieve](http://www.wordreference.com/enzh/retrieve)|取回、恢复、纠正|
+|[interact](http://www.wordreference.com/enzh/interact)|相互作用、相互影响|
 
 ## conjunction
 
