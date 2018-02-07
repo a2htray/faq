@@ -125,6 +125,27 @@
 |[invade](http://www.wordreference.com/enzh/invade)|入侵|
 |[retrieve](http://www.wordreference.com/enzh/retrieve)|取回、恢复、纠正|
 |[interact](http://www.wordreference.com/enzh/interact)|相互作用、相互影响|
+|[vindication](http://www.wordreference.com/enzh/vindication)|n:辩护，证明无罪，澄清，证实|
+|[competitor](http://fanyi.baidu.com/?aldtype=16047#en/zh/competitor)|n:竞争对手|
+|[spectacular](http://fanyi.baidu.com/?aldtype=16047#en/zh/spectacular)|adj:惊人的、壮观的;n:惊人的场面|
+|[mighty](http://fanyi.baidu.com/?aldtype=16047#en/zh/mighty)|adj:强大的;adv:非常、很|
+|[bygone](http://fanyi.baidu.com/?aldtype=16047#en/zh/bygone)|adj:过去的;n:往事|
+|[spectator](http://fanyi.baidu.com/?aldtype=16047#en/zh/spectator)|n:观众、旁观者|
+|[entice](http://www.wordreference.com/enzh/entice)|诱使,怂恿,吸引|
+|[heyday](http://www.wordreference.com/enzh/heyday)|n:鼎盛期|
+|[prowess](http://fanyi.baidu.com/?aldtype=16047#en/zh/prowess)|n:高超技艺|
+|[pioneer](http://www.wordreference.com/enzh/pioneer)|n:开拓者;先锋者;v:探索、创新|
+|[impressive](http://fanyi.baidu.com/?aldtype=16047#en/zh/impressive)|n:可观的、印象深刻的|
+|[booster](http://fanyi.baidu.com/?aldtype=16047#en/zh/booster)|n:助推器|
+|[robotic](http://fanyi.baidu.com/?aldtype=16047#en/zh/robotic)|adj:机器人、自动的、呆板的|
+|[spacesuit](http://fanyi.baidu.com/?aldtype=16047#en/zh/spacesuit)|太空服|
+|[veil](http://fanyi.baidu.com/#en/zh/veil)|面纱;掩饰;覆盖物;托词|
+|[mastery](http://www.wordreference.com/enzh/mastery)|n:精通、统治、控制|
+|[domination](http://www.wordreference.com/enzh/domination)|控制力，统治力|
+|[colonization](http://fanyi.baidu.com/?aldtype=16047#en/zh/colonization)|殖民地的开拓，殖民，殖民地化;移殖|
+|[confound](http://fanyi.baidu.com/?aldtype=16047#en/zh/confound)|挫败;使混淆，使混乱;诅咒|
+|[artificial](http://fanyi.baidu.com/?aldtype=16047#en/zh/artificial)|adj:人工的;人造的;人为的;虚假的，非原产地的|
+|[pilot](http://fanyi.baidu.com/?aldtype=16047#en/zh/pilot)|飞行员;引航员;向导;[机械学]导向器|
 
 ## conjunction
 

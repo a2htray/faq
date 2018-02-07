@@ -29,3 +29,10 @@
 |a slew of|大量的...|
 |half the battle|成功了一半|
 |as the side note|从另一方面说|
+|take off|起飞、突然成功|
+|be made up of|由...组成|
+|ship out|运出|
+|with an eye for sth|着眼于，以...的眼光|
+|leave over from ...|由...遗留下来|
+|far low than|远远低于...|
+|a nice earner|一个赚钱的东西|

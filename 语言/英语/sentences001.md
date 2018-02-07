@@ -35,3 +35,8 @@
 
 * Because of Haskell great type system that allows us to know a lot about functions
 just by knowing its type declaration.
+
+* Elon Musk, the founder of SpaceX, **the firm which built the Falcon Heavy**, had been
+`frank about` **the possibility that the launcher might fail**.
+
+* In a nice bit of cross-promotion, the cargo for the flight was a sports car made by Tesla.
