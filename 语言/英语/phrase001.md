@@ -36,3 +36,9 @@
 |leave over from ...|由...遗留下来|
 |far low than|远远低于...|
 |a nice earner|一个赚钱的东西|
+|keep track of...|记录，保持...联系|
+|all the better|反而更好...|
+|on behalf of|代表...|
+|all but|几乎、差不多|
+|make use of|利用、使用|
+|ahead of time|提前|
