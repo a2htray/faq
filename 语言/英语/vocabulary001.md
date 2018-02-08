@@ -23,7 +23,7 @@
 |[rare](http://fanyi.baidu.com/?aldtype=16047#en/zh/rare)|稀少的，少的|
 |acceptable|可以授受的|
 |[imply](http://fanyi.baidu.com/?aldtype=16047#en/zh/imply)|表明、意味、暗示|
-|roughly|大概地、粗略地|
+|[roughly](http://fanyi.baidu.com/?aldtype=16047#en/zh/roughly)|大概地、粗略地|
 |[idiomatic](http://fanyi.baidu.com/?aldtype=16047#en/zh/idiomatic)|惯用的、符合语言习惯的|
 |aware|意识到、察觉|
 |sneeze|打喷嚏|

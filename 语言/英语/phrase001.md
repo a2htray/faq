@@ -42,3 +42,12 @@
 |all but|几乎、差不多|
 |make use of|利用、使用|
 |ahead of time|提前|
+|brush up|温习|
+|in nearly a decade|在最近的十年|
+|end up|最终变成、结束|
+|accurate track|准确追踪|
+|loom over|笼罩|
+|a shortage of|...的不足|
+|come along|到来|
+|is prone to|...发展成，有...的趋势|
+|knock out|出局、击败、淘汰|
