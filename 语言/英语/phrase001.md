@@ -29,3 +29,25 @@
 |a slew of|大量的...|
 |half the battle|成功了一半|
 |as the side note|从另一方面说|
+|take off|起飞、突然成功|
+|be made up of|由...组成|
+|ship out|运出|
+|with an eye for sth|着眼于，以...的眼光|
+|leave over from ...|由...遗留下来|
+|far low than|远远低于...|
+|a nice earner|一个赚钱的东西|
+|keep track of...|记录，保持...联系|
+|all the better|反而更好...|
+|on behalf of|代表...|
+|all but|几乎、差不多|
+|make use of|利用、使用|
+|ahead of time|提前|
+|brush up|温习|
+|in nearly a decade|在最近的十年|
+|end up|最终变成、结束|
+|accurate track|准确追踪|
+|loom over|笼罩|
+|a shortage of|...的不足|
+|come along|到来|
+|is prone to|...发展成，有...的趋势|
+|knock out|出局、击败、淘汰|
