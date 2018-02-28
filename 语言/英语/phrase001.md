@@ -51,3 +51,6 @@
 |come along|到来|
 |is prone to|...发展成，有...的趋势|
 |knock out|出局、击败、淘汰|
+|foreseeable future|可预见的未来|
+|reminiscent of sb/sth|使回忆起（人或事）|
+|monetary policy|货币政策|
