@@ -31,7 +31,7 @@
 |as the side note|从另一方面说|
 |take off|起飞、突然成功|
 |be made up of|由...组成|
-|ship out|运出|
+|ship out|运出;to leave a situation|
 |with an eye for sth|着眼于，以...的眼光|
 |leave over from ...|由...遗留下来|
 |far low than|远远低于...|
@@ -42,7 +42,7 @@
 |all but|几乎、差不多|
 |make use of|利用、使用|
 |ahead of time|提前|
-|brush up|温习|
+|brush up|温习;to improve your knowledge of something already learned or partly forgotten|
 |in nearly a decade|在最近的十年|
 |end up|最终变成、结束|
 |accurate track|准确追踪|
@@ -54,3 +54,5 @@
 |foreseeable future|可预见的未来|
 |reminiscent of sb/sth|使回忆起（人或事）|
 |monetary policy|货币政策|
+|on the flip side|相反的另一面|
+|find/take shelter|protect from bad weather,danger or attack|

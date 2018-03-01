@@ -35,7 +35,7 @@
 |[rapid](http://fanyi.baidu.com/?aldtype=16047#en/zh/rapid)|快速的、险峻的|
 |[mutation](http://fanyi.baidu.com/?aldtype=16047#en/zh/mutation)|n:突变|
 |[mutate](http://fanyi.baidu.com/?aldtype=16047#en/zh/mutate)|v:突变|
-|[evade](http://fanyi.baidu.com/?aldtype=16047#en/zh/evade)|避开、逃避|
+|[evade](http://fanyi.baidu.com/?aldtype=16047#en/zh/evade)|避开、逃避; to escape from sb/sth or avoid meeting sb|
 |[notable](http://fanyi.baidu.com/?aldtype=16047#en/zh/notable)|显著的、名人的|
 |[antibiotic](http://fanyi.baidu.com/?aldtype=16047#en/zh/antibiotic)|抗生素|
 |[medicate](http://fanyi.baidu.com/?aldtype=16047#en/zh/medicate)|治疗、加入药物|
@@ -66,3 +66,19 @@
 |[reinforce](http://fanyi.baidu.com/?aldtype=16047#en/zh/reinforce)|加强、巩固;to make a feeling, an idea, etc. stronger|
 |[extreme](http://fanyi.baidu.com/?aldtype=16047#en/zh/extreme)|极端;very great in degree|
 |[supreme](http://fanyi.baidu.com/?aldtype=16047#en/zh/supreme)|最高的、至高的;very greater in tank or position|
+|[slew](https://dictionary.cambridge.org/dictionary/english/slew)|a large amount or number/eg. a slew of 大量的|
+|[earner](https://dictionary.cambridge.org/dictionary/english/earner)|someone or something that earns money|
+|[percentage](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/percentage)|百分比、好处|
+|[declare](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/declare)|表达、宣告、声明|
+|[attachment](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/attachment)|附着物、深深的情感|
+|[adherent](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/adherent)|信徒、拥护者|
+|[affair](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/affair)|事件、事务|
+|[continent](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/continent)|大陆|
+|[influx](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/influx)|汇集、涌进|
+|[ghastly](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/ghastly)|极坏的、可怕的|
+|[consequence](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/consequence)|常指不好或不利的结果、后果|
+|[destitute](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/destitute)|一无所有的;have no money, food, water|
+|[deportation](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/deportation-order?q=deportation)|把…驱逐出境，把…遣送出境…|
+|[hard-line](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/hard-line)|强硬的、不妥协的|
+|[alien](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/alien)|外国的、异族的|
+|[embarrassment](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/embarrassment?q=embarrassments)|尴尬，窘迫；局促不安；令人尴尬的事|

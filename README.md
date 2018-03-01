@@ -34,6 +34,8 @@
 
 [wordreference 在线英语词典](http://www.wordreference.com/enzh/)
 
+[cambridge dictionary 剑桥大字典 英英](https://dictionary.cambridge.org/dictionary/english/)
+
 [xianbai的Markdown教程](http://xianbai.me/learn-md/article/about/readme.html)
 
 ## 教程
@@ -41,7 +43,5 @@
 [教程 https://code.tutsplus.com (什么都有、很全)](https://code.tutsplus.com)
 
 ### 杂
-
-[wordreference]()
 
 [科学公园](http://www.ikexue.org)

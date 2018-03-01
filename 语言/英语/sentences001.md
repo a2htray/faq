@@ -40,3 +40,5 @@ just by knowing its type declaration.
 `frank about` **the possibility that the launcher might fail**.
 
 * In a nice bit of cross-promotion, the cargo for the flight was a sports car made by Tesla.
+
+* Their task was to look at Europe's economic and refugee crisis from an christian point of view.
