@@ -82,3 +82,10 @@
 |[hard-line](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/hard-line)|强硬的、不妥协的|
 |[alien](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/alien)|外国的、异族的|
 |[embarrassment](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/embarrassment?q=embarrassments)|尴尬，窘迫；局促不安；令人尴尬的事|
+|[payoff](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/payoff?q=payoffs)|（一系列行动的）结果，成果;the result of a set of actions|
+|[payoff](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/payoff?q=payoffs)|封口钱，贿赂款|
+|[invoice](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/invoice?q=invoice+)|（供之后支付的）费用清单|
+|[abolish](https://dictionary.cambridge.org/dictionary/english/abolish)|废除;to end an activity or custom offically|
+|[palpable](https://dictionary.cambridge.org/dictionary/english/palpable)|可感知的;易察觉的|
+|[bunch](https://dictionary.cambridge.org/dictionary/english/bunch?q=bunch+)|组、串|
+|[obstacle](https://dictionary.cambridge.org/dictionary/english/obstacle?q=obstacle+)|障碍|

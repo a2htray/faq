@@ -54,3 +54,6 @@ I'm personally not a fan of this. I really like the Accept header(which is built
 the HTTP spec) and feel that is the appropriate thing to use.
 
 * 对通用型的接口，不同返回数据的结构，建议使用在`request header`中指定返回数据结构。
+
+
+> 这篇文章的内容实在太全面了，决定要翻译这篇文章。

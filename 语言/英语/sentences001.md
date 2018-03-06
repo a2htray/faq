@@ -42,3 +42,26 @@ just by knowing its type declaration.
 * In a nice bit of cross-promotion, the cargo for the flight was a sports car made by Tesla.
 
 * Their task was to look at Europe's economic and refugee crisis from an christian point of view.
+
+## From Haskell Tutorial
+
+> an "almost-functional" language such as ML or Scheme.
+
+> Examples of expressions include atomic values such as the integer 5, the character '5', and the function
+\x -> x + 1
+
+it means the function in Haskell is an atomic value.
+
+> The "::" can be read as "has type".
+
+> The static type system ensures that the Haskell programs are type safe.
+
+> Function `head` returns the first element of a list, function `tail` returns the all but the first.
+
+The result type of function `head` is the type the element, but the result type of function `tail` is a list.
+
+> We can define our own type in Haskell using a `data` declaration.
+
+## World Reference
+
+> The more content you provide, the better the answers will be.
