@@ -109,4 +109,97 @@ _Typically, GET requests can be cached (and often are!) Browsers, for example, w
 
 ## 版本
 
+_No matter what you are building, no matter how much planning you do beforehand, your core application is going to change, your data relationships will change, attributes will invariably be added and removed from your Resources. This is just how software development works, and is especially true if your project is alive and used by many people (which is likely the case if you’re building an API)._
+
+不管你的要构建什么样的应用，也不管事先你做了多少准备工作，你的核心应用总是会发生改变，你的数据关系也会发生改变，总是会有新增的数据属性，也会有删除的数据属性。这正是软件开发中需要做的工作，也特别适用于你的项目依旧在运行中，且有很多的用户正在使用你的服务(这也是需要构建API服务的案例)。
+
+_Remember than an API is a published contract between a Server and a Consumer. If you make changes to the Servers API and these changes break backwards compatibility, you will break things for your Consumer and they will resent you for it. Do it enough, and they will leave. To ensure your application evolves AND you keep your Consumers happy, you need to occasionally introduce new versions of the API while still allowing old versions to be accessible._
+
+请记住，API是服务器端与客户端之间的一个已经发布的协议。如果你对服务器API做了修改，然后这些修改破坏了向后兼容，那你也就是破坏了你和客户端之前的协议，你的用户也为因此而埋怨你。经常这样做的话，你的用户将不会在使用你的服务。为了确保你的服务能够正常升级，也为了让你的用户感觉到愉悦，你需要偶尔引入一些新版本的API，同时依旧允许旧版本的API还是可以被访问。
+
+_As a side note, if you are simply ADDING new features to your API, such as new attributes on a Resource (which are not required and the Resource will function without), or if you are ADDING new Endpoints, you do not need to increment your API version number since these changes do not break backwards compatibility. You will want to update your API Documentation (your Contract), of course._
+
+从另一个侧面说明，如果你对你的API只是简单地加了新的特性，比如一个资源的新的属性(这里的属性不是必选的，你的资源没有这个属性依旧可以正常使用)，再比如你新增了一个路由，你不需要对你的API版本进行更新，因为这些改变并没有破坏向后兼容性。当然，你还是需要更新你的API文档(你和客户端遵守的协议)。
+
+_Over time you can deprecate old versions of the API. To deprecate a feature doesn’t mean to shut if off or diminish the quality of it, but to tell Consumers of your API that the older version will be removed on a specific date and that they should upgrade to a newer version._
+
+过一段时间后，你可以弃用旧版本的API。为了弃用一个特性，并不是意味着直接移除这个特性，也不是降低这个特性的质量，而是告诉你的用户，这个旧版本的API在指定日期将会移除，需要升级到较新的版本。
+
+_A good RESTful API design will keep track of the version in the URL. The other most common solution is to put a version number in a request header, but after working with many different Third Party Developers, I can tell you that adding headers is no where near as easy as adding a URL Segment._
+
+一个良好的API设计需要在`URL`上保留版本信息。其中一个非常通用的解决方案就是将在请求头中加入版本信息，但在与多个第三方开发者合作之后，我可以告诉你增加一个`URL`片段(用于标识版本信息)比在请求头中增加更为简单。
+
+## Analytics
+
+## 分析
+
+_Keep track of the version/endpoints of your API being used by Consumers. This can be as simple as incrementing an integer in a database each time a request is made. There are many reasons that keeping track of API Analytics is a good idea, for example, the most commonly used API calls should be made efficient._
+
+对已经被用户使用的API，需要对它的版本/路由进行控制、追踪。这个非常容易实现，就好像每次发生一个请求，在数据库中进行自增。对API进行追踪分析是一个非常好的主意，也有很多其他的理由。比如，使用率最频繁的API应尽可能的高性能。
+
+_For the purposes of building an API which Third Party Developers will love, the most important thing is that when you do deprecate a version of your API, you can actually contact developers using deprecated API features. This is the perfect way to remind them to upgrade before you kill the old API version._
+
+为了构建出让第三方开发者喜爱的API，最重要的事在于当你的弃用一个版本的API时，你能马上通知正在使用该API的开发者。在移除一个旧版本前，让你的开发者更新API，这是一个非常完美的方法。
+
+_The process of Third Party Developer notification can be automated, e.g. mail the developer every time 10,000 requests to a deprecated feature are made._
+
+给第三方开发者发送通知的过程应该是自动的。比如，当用户对已经弃用的特性每发送10000次请求就已邮件的形式进行通知。
+
+
+## API Root URL
+
+## API根路径
+
+_The root location of your API is important, believe it or not. When a developer (read as code archaeologist) inherits an old project using your API and needs to build new features, they may not know about your service at all. Perhaps all they know is a list of URLs which the Consumer calls out to. It’s important that the root entry point into your API is as simple as possible, as a long complex URL will appear daunting and can turn developers away._
+
+不管你相信不相信，API服务的根路径是十分重要的。当一个开发者(把他当作代码的考古学家)得到了使用你API服务的旧项目，且他需要加入新的特性，他对你的API服务一点都不知情。也可能他们所有人都知道当前客户端所使用请求的API列表。你API的入口根路径应该尽可能的简单，这是非常重要的，因为一个较长且复杂的`URL`会让人望而却步，最终使用开发者不再使用而离开。
+
+_Here are two common URL Roots:_
+
+下面是两种常用的`URL`根路径：
+
+* https://example.org/api/v1/*
+* https://api.example.com/v1/*
+
+如果你的应用是非常庞大的，或者你期盼你的应用将会变得庞大，使用子域名的形式搭建你的API服务(如api.)是一个不错的选择。顺着这个思路，可以让你的应用更加具有弹性伸缩。
+
+_If you anticipate your API will never grow to be that large, or you want a much simpler application setup (e.g. you want to host the website AND API from the same framework), placing your API beneath a URL segment at the root of the domain (e.g. /api/) works as well._
+
+如果你觉得你的API服务不会发展成那么大时，或者你只是需要一个足够简单的应用(比如，你的网站和API服务都是属于同一个框架)，在域名中加一个`URL`片段(比如，`/api/`)，也是可以非常好地工作的。
+
+_It’s a good idea to have content at the root of your API. Hitting the root of GitHub’s API returns a listing of endpoints, for example. Personally, I’m a fan of having the root URL give information which a lost developer would find useful, e.g., how to get to the developer documentation for the API._
+
+让你的API的根路径中包含内容是一个很好的主意。点击`GitHub`根路径的API，将会返回一个路由的列表。再比如，作为私人的，在根路径中加入一些帮助信息，让不知所措的开发者找到有用的信息，我是这种方法的支持者。
+
+_Also, notice the HTTPS prefix. As a good RESTful API, you must host your API behind HTTPS._
+
+同时，还需要注意到`HTTPS`前缀，作为一个良好的`RESTful API`，你必须让你的API在`HTTPS`协议中进行通信。
+
+
+## Endpoints
+
+## 路由
+
+_An Endpoint is a URL within your API which points to a specific Resource or a Collection of Resources._
+
+一个路由就一个`URL`路径，它标识着一个特定的资源，或者一个资源的集合。
+
+_If you were building a fictional API to represent several different Zoo’s, each containing many Animals (with an animal belonging to exactly one Zoo), employees (who can work at multiple zoos) and keeping track of the species of each animal, you might have the following endpoints:_
+
+如果你现在要为几个不同的动物园及其中的员工构建一个虚拟的`API`，每个动物园都包含许多动物(一个动物只属于一个动物园)，对不同种类的动物进行跟踪，你可能会设计出下面几个路由：
+
+* https://api.example.com/v1/**zoos**
+* https://api.example.com/v1/**animals**
+* https://api.example.com/v1/**animal_types**
+* https://api.example.com/v1/**employees**
+
+_When referring to what each endpoint can do, you’ll want to list valid HTTP Verb and Endpoint combinations. For example, here’s a semi-comprehensive list of actions one can perform with our fictional API. Notice that I’ve preceded each endpoint with the HTTP Verb, as this is the same notation used within an HTTP Request header._
+
+当要指出每一个路由具体能做什么的时候，你需要将`HTTP`动作与路由进行结合，并将其展示出来。比如，
+
+
+
+
+
+
 
