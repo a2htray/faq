@@ -130,7 +130,7 @@ _A good RESTful API design will keep track of the version in the URL. The other 
 
 一个良好的API设计需要在`URL`上保留版本信息。其中一个非常通用的解决方案就是将在请求头中加入版本信息，但在与多个第三方开发者合作之后，我可以告诉你增加一个`URL`片段(用于标识版本信息)比在请求头中增加更为简单。
 
-## Analytics
+## _Analytics_
 
 ## 分析
 
@@ -147,7 +147,7 @@ _The process of Third Party Developer notification can be automated, e.g. mail t
 给第三方开发者发送通知的过程应该是自动的。比如，当用户对已经弃用的特性每发送10000次请求就已邮件的形式进行通知。
 
 
-## API Root URL
+## _API Root URL_
 
 ## API根路径
 
@@ -177,7 +177,7 @@ _Also, notice the HTTPS prefix. As a good RESTful API, you must host your API be
 同时，还需要注意到`HTTPS`前缀，作为一个良好的`RESTful API`，你必须让你的API在`HTTPS`协议中进行通信。
 
 
-## Endpoints
+## _Endpoints_
 
 ## 路由
 
@@ -198,26 +198,26 @@ _When referring to what each endpoint can do, you’ll want to list valid HTTP V
 
 当要指出每一个路由具体能做什么的时候，你需要将`HTTP`动作与路由进行结合，并将其展示出来。比如，通过你虚拟的`API`，下面这些动作都是可以去执行的。注意，我在每个路由前都加上了`HTTP`的动作，这些动作和在`HTTP`请求中的动作是一样的。
 
-* GET /zoos: List all Zoos (ID and Name, not too much detail)
-* POST /zoos: Create a new Zoo
-* GET /zoos/ZID: Retrieve an entire Zoo object
-* PUT /zoos/ZID: Update a Zoo (entire object)
-* PATCH /zoos/ZID: Update a Zoo (partial object)
-* DELETE /zoos/ZID: Delete a Zoo
-* GET /zoos/ZID/animals: Retrieve a listing of Animals (ID and Name).
-* GET /animals: List all Animals (ID and Name).
-* POST /animals: Create a new Animal
-* GET /animals/AID: Retrieve an Animal object
-* PUT /animals/AID: Update an Animal (entire object)
-* PATCH /animals/AID: Update an Animal (partial object)
-* GET /animal_types: Retrieve a listing (ID and Name) of all Animal Types
-* GET /animal_types/ATID: Retrieve an entire Animal Type object
-* GET /employees: Retrieve an entire list of Employees
-* GET /employees/EID: Retreive a specific Employee
-* GET /zoos/ZID/employees: Retrieve a listing of Employees (ID and Name) who work at this Zoo
-* POST /employees: Create a new Employee
-* POST /zoos/ZID/employees: Hire an Employee at a specific Zoo
-* DELETE /zoos/ZID/employees/EID: Fire an Employee from a specific Zoo
+* _GET /zoos: List all Zoos (ID and Name, not too much detail)_
+* _POST /zoos: Create a new Zoo_
+* _GET /zoos/ZID: Retrieve an entire Zoo object_
+* _PUT /zoos/ZID: Update a Zoo (entire object)_
+* _PATCH /zoos/ZID: Update a Zoo (partial object)_
+* _DELETE /zoos/ZID: Delete a Zoo_
+* _GET /zoos/ZID/animals: Retrieve a listing of Animals (ID and Name)._
+* _GET /animals: List all Animals (ID and Name)._
+* _POST /animals: Create a new Animal_
+* _GET /animals/AID: Retrieve an Animal object_
+* _PUT /animals/AID: Update an Animal (entire object)_
+* _PATCH /animals/AID: Update an Animal (partial object)_
+* _GET /animal_types: Retrieve a listing (ID and Name) of all Animal Types_
+* _GET /animal_types/ATID: Retrieve an entire Animal Type object_
+* _GET /employees: Retrieve an entire list of Employees_
+* _GET /employees/EID: Retreive a specific Employee_
+* _GET /zoos/ZID/employees: Retrieve a listing of Employees (ID and Name) who work at this Zoo_
+* _POST /employees: Create a new Employee_
+* _POST /zoos/ZID/employees: Hire an Employee at a specific Zoo_
+* _DELETE /zoos/ZID/employees/EID: Fire an Employee from a specific Zoo_
 
 * GET /zoos: 列出所有的动物园 (ID and Name, 不需要太详细)
 * POST /zoos: 创建一个新的动物园
@@ -252,7 +252,7 @@ _Notice how the relationships between data is displayed, specifically the many t
 
 注意，数据之间的关系要如何做展示，特别是例子中员工与动物园之间的多对多关系。通过加一个额外的`URL`片段，API可以执行特定的作用。当然，我们这没有一个明确的`HTTP`动作`FIRE`用于解雇一个员工，但通过在特定的动物园中删除一个员工的逻辑，我们有能力去实现相同的功能。
 
-## Filtering
+## _Filtering_
 
 ## 过滤
 
@@ -264,7 +264,7 @@ _Minimize the arbitrary limits imposed on Third Party Developers._
 
 对第三方开发人员的限制尽可能最小化。
 
-It is important, however, that you do offer the ability for a Consumer to specify some sort of filtering/limitation of the results. The most important reason for this is that the network activity is minimal and the Consumer gets their results back as soon as possible. The second most important reason for this is the Consumer may be lazy, and if the Server can do filtering and pagination for them, all the better. The not-so-important reason (from the Consumers perspective), yet a great benefit for the Server, is that the request will be less resource heavy.
+_It is important, however, that you do offer the ability for a Consumer to specify some sort of filtering/limitation of the results. The most important reason for this is that the network activity is minimal and the Consumer gets their results back as soon as possible. The second most important reason for this is the Consumer may be lazy, and if the Server can do filtering and pagination for them, all the better. The not-so-important reason (from the Consumers perspective), yet a great benefit for the Server, is that the request will be less resource heavy._
 
 
 
