@@ -38,6 +38,7 @@ _Here’s a few of the important terms I will use throughout the course of this 
 * _**URL Segment**: A slash-separated piece of information in the URL._
 
 
+* _**Resource**：一个对象的实例，比如，一个动物`animal`
 * **Collection**：两种类型对象的命令，比如动物集合`animals`
 * **HTTP**：网络间通信的协议
 * **Consumer**：可以发送HTTP请求的客户端应用
@@ -195,7 +196,78 @@ _If you were building a fictional API to represent several different Zoo’s, ea
 
 _When referring to what each endpoint can do, you’ll want to list valid HTTP Verb and Endpoint combinations. For example, here’s a semi-comprehensive list of actions one can perform with our fictional API. Notice that I’ve preceded each endpoint with the HTTP Verb, as this is the same notation used within an HTTP Request header._
 
-当要指出每一个路由具体能做什么的时候，你需要将`HTTP`动作与路由进行结合，并将其展示出来。比如，
+当要指出每一个路由具体能做什么的时候，你需要将`HTTP`动作与路由进行结合，并将其展示出来。比如，通过你虚拟的`API`，下面这些动作都是可以去执行的。注意，我在每个路由前都加上了`HTTP`的动作，这些动作和在`HTTP`请求中的动作是一样的。
+
+* GET /zoos: List all Zoos (ID and Name, not too much detail)
+* POST /zoos: Create a new Zoo
+* GET /zoos/ZID: Retrieve an entire Zoo object
+* PUT /zoos/ZID: Update a Zoo (entire object)
+* PATCH /zoos/ZID: Update a Zoo (partial object)
+* DELETE /zoos/ZID: Delete a Zoo
+* GET /zoos/ZID/animals: Retrieve a listing of Animals (ID and Name).
+* GET /animals: List all Animals (ID and Name).
+* POST /animals: Create a new Animal
+* GET /animals/AID: Retrieve an Animal object
+* PUT /animals/AID: Update an Animal (entire object)
+* PATCH /animals/AID: Update an Animal (partial object)
+* GET /animal_types: Retrieve a listing (ID and Name) of all Animal Types
+* GET /animal_types/ATID: Retrieve an entire Animal Type object
+* GET /employees: Retrieve an entire list of Employees
+* GET /employees/EID: Retreive a specific Employee
+* GET /zoos/ZID/employees: Retrieve a listing of Employees (ID and Name) who work at this Zoo
+* POST /employees: Create a new Employee
+* POST /zoos/ZID/employees: Hire an Employee at a specific Zoo
+* DELETE /zoos/ZID/employees/EID: Fire an Employee from a specific Zoo
+
+* GET /zoos: 列出所有的动物园 (ID and Name, 不需要太详细)
+* POST /zoos: 创建一个新的动物园
+* GET /zoos/ZID: 返回一个动物园的实例
+* PUT /zoos/ZID: 更新动物园信息
+* PATCH /zoos/ZID: 更新动物园信息 (使用部分信息)
+* DELETE /zoos/ZID: 删除一个动物园
+* GET /zoos/ZID/animals: 返回动物列表 (ID and Name).
+* GET /animals: 返回所有的动物列表 (ID and Name).
+* POST /animals: 创建一个新的动物
+* GET /animals/AID: 返回一个动物的实例
+* PUT /animals/AID: 更新一个动物信息
+* PATCH /animals/AID: 更新一个动物信息 (使用部分信息)
+* GET /animal_types: 返回所有的动物类型
+* GET /animal_types/ATID: 返回一个动物类型的实例
+* GET /employees: 返回员工列表
+* GET /employees/EID: 返回特定的员工信息
+* GET /zoos/ZID/employees: 指定动物园ID，返回该动物园中的员工列表
+* POST /employees: 创建一个新的员工
+* POST /zoos/ZID/employees: 指定动物园雇用一个员工
+* DELETE /zoos/ZID/employees/EID: 解雇特定动物园中的特定员工
+
+_In the above list, ZID means Zoo ID, AID means Animal ID, EID means Employee ID, and ATID means Animal Type ID. Having a key in your documentation for whatever convention you choose is a good idea._
+
+在上述的列表中，`ZID`表示动物园的ID，`AID`表示动物的ID，`EID`表示员工的ID，`ATID`表示动物类型的ID。在你的文档中，对于你的选择的会话设置一个关键字是非常好的想法。
+
+_I’ve left out the common API URL prefix in the above examples for brevity. While this can be fine during communications, in your actual API documentation, you should always display the full URL to each endpoint (e.g. GET http://api.example.com/v1/animal_type/ATID)._
+
+为了简洁起见，对于每一个`API`都省略了前缀。当然这些问题可以在交流中协定好，在你真实的API文档中，你总是需要为每一个路由展示其全路径(如，GET http://api.example.com/v1/animal_type/ATID)。
+
+_Notice how the relationships between data is displayed, specifically the many to many relationships between employees and zoos. By adding an additional URL segment, one can perform more specific interactions. Of course there is no HTTP verb for “FIRE”-ing an employee, but by performing a DELETE on an Employee located within a Zoo, we’re able to achieve the same effect._
+
+注意，数据之间的关系要如何做展示，特别是例子中员工与动物园之间的多对多关系。通过加一个额外的`URL`片段，API可以执行特定的作用。当然，我们这没有一个明确的`HTTP`动作`FIRE`用于解雇一个员工，但通过在特定的动物园中删除一个员工的逻辑，我们有能力去实现相同的功能。
+
+## Filtering
+
+## 过滤
+
+_When a Consumer makes a request for a listing of objects, it is important that you give them a list of every single object matching the requested criteria. This list could be massive. But, it is important that you don’t perform any arbitrary limitations of the data. It is these arbitrary limits which make it hard for a third party developer to know what is going on. If they request a certain Collection, and iterate over the results, and they never see more than 100 items, it is now their job to figure out where this limit is coming from. Is their ORM buggy and limiting items to 100? Is the network chopping up large packets?_
+
+当用户发送一个请求，要求返回一些对象的列表，根据请求的要求，你需要给他们返回特定的列表，这是至关重要的。这个列表可以非常庞大。但其中，尤为重要的是，你不能对这些数据再强加限制。正是这些强加的限制会导致第三方的开发人员不知道如何使用。如果他们要请求一个特定的集合，而这个集合是从已有结果中重新生成的，那他们查看的条目数不会超过100条，接下来就是他们的工作，指出将出使用限制过滤出合适的数据。是他们的`ORM`有bug还是做了限制，不能超过100？还是因为网络问题，将一个大的数据包拆分了？
+
+_Minimize the arbitrary limits imposed on Third Party Developers._
+
+对第三方开发人员的限制尽可能最小化。
+
+It is important, however, that you do offer the ability for a Consumer to specify some sort of filtering/limitation of the results. The most important reason for this is that the network activity is minimal and the Consumer gets their results back as soon as possible. The second most important reason for this is the Consumer may be lazy, and if the Server can do filtering and pagination for them, all the better. The not-so-important reason (from the Consumers perspective), yet a great benefit for the Server, is that the request will be less resource heavy.
+
+
+
 
 
 
