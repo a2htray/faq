@@ -1,3 +1,5 @@
+> 原文[https://codeplanet.io/principles-good-restful-api-design/](https://codeplanet.io/principles-good-restful-api-design/)
+
 # _Principles of good RESTful API Design_
 
 # 良好的RESTful API设计原则
