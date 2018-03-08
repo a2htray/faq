@@ -262,16 +262,163 @@ _When a Consumer makes a request for a listing of objects, it is important that 
 
 _Minimize the arbitrary limits imposed on Third Party Developers._
 
-对第三方开发人员的限制尽可能最小化。
+尽可能最小化对第三方开发人员的限制。
 
 _It is important, however, that you do offer the ability for a Consumer to specify some sort of filtering/limitation of the results. The most important reason for this is that the network activity is minimal and the Consumer gets their results back as soon as possible. The second most important reason for this is the Consumer may be lazy, and if the Server can do filtering and pagination for them, all the better. The not-so-important reason (from the Consumers perspective), yet a great benefit for the Server, is that the request will be less resource heavy._
 
+这是非常重要的一点。然而，有时你确实会提供一个能力，让用户可以指定结果的过滤条件或者限制条件。最主要的原因在于网络通信中数据量尽可能小，而且用户希望尽可能快地返回想要的结果。第二个主要的原因在于用户可能确实比较懒，如果`API`服务能帮助他们完成过滤或者分页的功能，那是再好不过了。一个不太重要的原因(对于用户来说)，请求的数据量不大的话，对服务器也一个非常棒的好处。
 
+_Filtering is mostly useful for performing GETs on Collections of resources. Since these are GET requests, filtering information should be passed via the URL. Here are some examples of the types of filtering you could conceivably add to your API:_
 
+过滤操作对于绝大多数执行像`GET`取资源集合非常有用。因为是`GET`请求，过滤条件需要通过`URL`进行传递。下面是一些过滤的例子，可以直接将它们构建在你的`API`中：
 
+* _?limit=10: Reduce the number of results returned to the Consumer (for Pagination)_
+* _?offset=10: Send sets of information to the Consumer (for Pagination)_
+* _?animal_type_id=1: Filter records which match the following condition (WHERE animal_type_id = 1)_
+* _?sortby=name&order=asc: Sort the results based on the specified attribute (ORDER BY `name` ASC)_
 
+* ?limit=10: 减少返回给用户的结果条目数 (对于分页来说)
+* ?offset=10: 会给用户返回分页信息 (for Pagination)
+* ?animal_type_id=1: 根据后面的条件匹配结果并返回 (WHERE animal_type_id = 1)
+* ?sortby=name&order=asc: 使用特定的属性进行排序 (ORDER BY `name` ASC)
 
+_Some of these filterings can be redundant with endpoint URLS. For example I previously mentioned GET /zoo/ZID/animals. This would be the same thing as GET /animals?zoo_id=ZID. Dedicated endpoints being made available to the Consumer will make their lives easier, this is especially true with requests you anticipate they will make a lot. In the documentation, mention this redundancy so that Third Party Developers aren’t left wondering if differences exist._
 
+类似的一些过滤操作与路由`URL`的功能会有冗余。比如，刚才我提到的`GET /zoo/ZID/animals`。它和`GET /animals?zoo_id=ZID`是相同的东西。确保用户有专门的、可用的路由，也会让这些路由更早的被使用。你希望用户尽可能多访问的路由，这一点是特别有用的。在文档中，需要提到个别路由的冗余，这样第三方开发者对这些不同之处就不会感到迷惑。
+
+_Also, this goes without saying, but whenever you perform filtering or sorting of data, make sure you white-list the columns for which the Consumer can filter and sort by. We don’t want any database errors being sent to Consumers!_
+
+两样的，不指明冗余的地方，第三方开发人员也可以进行正常的开发，但是不管在什么时候，你在执行过滤或排序数据库，对于用户可以过滤和排序的字段设置一个白名单。
+
+## Status Codes
+
+## 状态码
+
+_It is very important that as a RESTful API, you make use of the proper HTTP Status Codes; they are a standard after all! Various network equipment is able to read these status codes, e.g. load balancers can be configured to avoid sending requests to a web server sending out lots of 50x errors. There are a plethora of HTTP Status Codes to choose from, however this list should be a good starting point:_
+
+使用用合适的`HTTP`状态返回码对于构建一个`RESTful API`来说十分的重要；这是一个行业标准！不同种类的网络设备有能力去理解这些状态返回码，如可以通过配置负载均衡，对于`50x`错误的的请求，避免其去请求web服务。有太多的`HTTP`请求的状态码可以选择，然而，下面这个列表是一个很好的切入点：
+
+* _200 OK – [GET]
+    * _The Consumer requested data from the Server, and the Server found it for them (Idempotent)_
+* _201 CREATED – [POST/PUT/PATCH]_
+    * _The Consumer gave the Server data, and the Server created a resource_
+* _204 NO CONTENT – [DELETE]_
+    * _The Consumer asked the Server to delete a Resource, and the Server deleted it_
+* _400 INVALID REQUEST – [POST/PUT/PATCH]_
+    * _The Consumer gave bad data to the Server, and the Server did nothing with it (Idempotent)_
+* _404 NOT FOUND – [*]_
+    * _The Consumer referenced an inexistant Resource or Collection, and the Server did nothing (Idempotent)_
+* _500 INTERNAL SERVER ERROR – [*]_
+    * _The Server encountered an error, and the Consumer has no knowledge if the request was successful_
+
+* 200 OK – [GET]
+    * 客户端向服务端请求数据，服务端找到数据并提供给客户端
+* 201 CREATED – [POST/PUT/PATCH]
+    * 客户端提供数据给服务器，服务端相应地创建一个资源
+* 204 NO CONTENT – [DELETE]
+    * 客户端要求服务端删除一个资源，服务端相应地删除资源
+* 400 INVALID REQUEST – [POST/PUT/PATCH]
+    * 客户端传递给服务端的数据无效，而服务端对其数据并未做相应处理
+* 404 NOT FOUND – [*]
+    * 客户端希望得到一个资源或者一个集合，而服务端并没有找到客户端要求的数据
+* 500 INTERNAL SERVER ERROR – [*]
+    * 服务器发生故障，客户端并不知道请求是否成功
+
+## Status Code Ranges
+
+## 状态码范围
+
+_The 1xx range is reserved for low-level HTTP stuff, and you’ll very likely go your entire career without manually sending one of these status codes._
+
+`1xx`对应着一些低级别的`HTTP`请求，也许在你整个工作生涯中都没有手动发送过其中任何一个状态码。
+
+_The 2xx range is reserved for successful messages where all goes as planned. Do your best to ensure your Server sends as many of these to the Consumer as possible._
+
+`2xx`对应着正如计划的一样，服务端与客户端都成功处理了请求并进行通信。尽你最大的努力，尽可能多地向客户端发送这些状态码。
+
+_The 3xx range is reserved for traffic redirection. Most APIs do not use these requests much (not nearly as often as the SEO folks use them ;), however, the newer Hypermedia style APIs will make more use of these._
+
+`3xx`用于重定向操作。绝大多数`API`都不会使用这些状态码(对于`SEO`来说，几乎就是不用)，然而，在超媒体的`API`中，这些状态码变得非常有用。
+
+_The 4xx range is reserved for responding to errors made by the Consumer, e.g. they’re providing bad data or asking for things which don’t exist. These requests should be be idempotent, and not change the state of the server._
+
+`4xx`用于处理那些因为客户端原因而导致返回错误的请求，如客户端提供了无效的数据或者请求不存在的资源。这类请求应该是等幂的，并不会对服务器状态进行改变。
+
+_The 5xx range is reserved as a response when the Server makes a mistake. Often times, these errors are thrown by low-level functions even outside of the developers hands, to ensure a Consumer gets some sort of response. The Consumer can’t possibly know the state of the server when a 5xx response is received, and so these should be avoidable._
+
+`5xx`用于处理由服务器问题而产生错误的返回。这些错误往往是由一些低级别的函数所产生，而且并不在开发人员的掌控之中。当客户端收到`5xx`的返回时，他们可能并不知道当前服务器的状态。
+
+## _Expected Return Documents_
+
+## 返回信息说明文档
+
+_When performing actions using the different HTTP verbs to Server endpoints, a Consumer needs to get some sort of information in return. This list is pretty typical of RESTful APIs:_
+
+通过使用不同的`HTTP`动作向服务端发送语法时，客户端需要知道某些种类的返回信息。下面列表是一个很好、很典型的例子：
+
+* _GET /collection: Return a listing (array) of Resource objects_
+* _GET /collection/resource: Return an individual Resource object_
+* _POST /collection: Return the newly created Resource object_
+* _PUT /collection/resource: Return the complete Resource object_
+* _PATCH /collection/resource: Return the complete Resource object_
+* _DELETE /collection/resource: Return an empty document_
+
+* GET /collection: 返回资源对象的列表或者数组
+* GET /collection/resource: 返回单独的资源对象
+* POST /collection: 返回最新创建的资源对象
+* PUT /collection/resource: 返回完整的资源对象
+* PATCH /collection/resource: 返回完整的资源对象
+* DELETE /collection/resource: 返回信息为空
+
+_Note that when a Consumer creates a Resource, they usually do not know the ID of the Resource being created (nor other attributes such as created and modified timestamps, if applicable). These additional attributes are returned with subsequent request, and of course as a response to the initial POST._
+
+注意，当客户端创建一个资源时，他们并不知道为创建这个资源而生成的ID(也有像创建时间、更新时间这类的属性也不知道)。像这些额外的属性会被请求返回，作为返回结果，当然也是最新创建的`POST`请求响应内容。
+
+## Authentication
+
+## 用户认证
+
+_Most of the time a Server will want to know exactly who is making which Requests. Sure, some APIs provide endpoints to be consumed by the general (anonymous) public, but most of the time work is being perform on behalf of someone._
+
+绝大部分的时候，作为服务器希望能够知道，谁发送了这些请求。所以，一些`APIS`会提供一些可以被匿名访问的路由，但服务器在绝大部分运行时间内，是明确知道是谁进行了一系列的操作。
+
+_[OAuth 2.0](https://tools.ietf.org/html/rfc6749) provides a great way of doing this. With each Request, you can be sure you know which Consumer is making requests, which User they are making requests on behalf of, and provides a (mostly) standardized way of expiring access or allowing Users to revoke access from a Consumer, all without the need for a third-party consumer to know the Users login credentials._
+
+为了实现用户认证，[OAuth 2.0](https://tools.ietf.org/html/rfc6749)是一个极其好的方法。对于每一个请求，可以让你明确知道是谁发送了这个请求，这个请求代表了哪个用户，并可提供接近标准的对访问时效控制或用户访问控制，而所有的这些，第三方用户必不需要知道内容具体的登录逻辑。
+
+_There are also [OAuth 1.0](http://tools.ietf.org/html/rfc5849) and [xAuth](https://dev.twitter.com/docs/oauth/xauth), which fill the same space. Whichever method you choose, make sure it is something common and well documented with many different libraries written for the languages/platforms which your Consumers will likely be using._
+
+当然还有其他的，如 [OAuth 1.0](http://tools.ietf.org/html/rfc5849)和[xAuth](https://dev.twitter.com/docs/oauth/xauth)，同样也应用于该领域。不管你选择哪种方式，确保该方式的通用性，具备完整的文档，拥有不同语言、不同丰富的类库，这样你的客户才有可以愿意去使用。
+
+## Content Type
+
+## 文本类型
+
+_Currently, the most “exciting” of APIs provide JSON data from RESTful interfaces. This includes Facebook, Twitter, GitHub, you name it. XML appears to have lost the war a while ago (except in large corporate environments). SOAP, thankfully, is all but dead, and we really don’t see much APIs providing HTML to be consumed (unless, that is, you’re building a scraper!)_
+
+目前，最普遍流行的`API`都有提供`JSON`数据的接口，其中包括`Facebook`, `Twitter`, `GitHub`，你可以看以`.xml`的形式已经在`格式大战`失去了其原有的地位(除了在一些大型的商用协同环境)。我们几乎已经看不到有`API`提供`HTML`格式的数据，供客户端访问(除非，你还处在一个落后的技术阶段)。
+
+_Developers using popular languages and frameworks can very likely parse any valid data format you return to them. You can even provide data in any of the aforementioned data formats (not including SOAP) quite easily, if you’re building a common response object and using a different serializer. What does matter though, is that you make use of the Accept header when responding with data._
+
+通过使用流行的编程语言和框架，在你返回给开发者的数据格式中，开发者都可以对其中有效数据进行解析。上述数据格式中，你甚至可以提供任意种格式也是十分简单。如果你正在构建通用的响应体结构，使用不同的序列化工具，起关键作用的是，需要在响应体的头消息中标识`Accept`属性值。
+
+_Some API creators recommend adding a .json, .xml, or .html file extension to the URL (after the endpoint) for specifying the content type to be returned, although I’m personally not a fan of this. I really like the Accept header (which is built into the HTTP spec) and feel that is the appropriate thing to use._
+
+一些`API`的开发建议在`URL`中增加`.json`,`.xml`或`.html`的后缀，用来指定要被返回的文本类型。尽管我个来说，并不是很喜欢这种方式。我确切的想法是，希望在`Accept header`进行标识(已经制定到`HTTP`规范)。我认为这种方式更加合适。
+
+## _Hypermedia APIs_
+
+## 超媒体 API
+
+_Hypermedia APIs are very likely the future of RESTful API design. They’re actually a pretty amazing concept, going “back to the roots” of how HTTP and HTML was intended to work._
+
+超媒体API更像是`RESTful API设计`的未来趋势。它确实有十分令人惊叹的概念，对于`HTTP`和`HTML`如何进行工作做了根源性的解释。
+
+_When working with non-Hypermedia RESTful APIs, the URL Endpoints are part of the contract between the Server and the Consumer. These Endpoints MUST be known by the Consumer ahead of time, and changing them means the Consumer is no longer able to communicate with the Server as intended. This, as you can assume, is quite a limitation._
+
+当我们在使用`非超媒体RESTful API`，`URL`信息也部分表达了服务端与客户端之间的协议。所以在使用前，用户端必须要先知道这些个`URL`信息，但如果将这些信息修改后，意味着用户端将不再有能力与服务端进行通信。正如你所想，这是一种很不好的限制。
+
+_Now, API Consumers are of course not the only user agent making HTTP requests on the Internet. Far from it. Humans, with their web browsers, are the most common user agent making HTTP requests. Humans, however, are NOT locked into this predefined Endpoint URL contract that RESTful APIs are. What makes humans so special? Well, they’re able to read content, click links for headings which look interesting, and in general explore a website and interpret content to get to where they want to go. If a URL changes, a human is not affected (unless, that is, they bookmarked a page, in which case they go to the homepage and find a new route to their beloved data)._
 
 
 

@@ -57,6 +57,7 @@
 |on the flip side|相反的另一面|
 |find/take shelter|protect from bad weather,danger or attack|
 |get rid of someone/something|to remove or throw away something unwanted|
+|on behalf of|代表|
 
 
 
