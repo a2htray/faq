@@ -420,5 +420,101 @@ _When working with non-Hypermedia RESTful APIs, the URL Endpoints are part of th
 
 _Now, API Consumers are of course not the only user agent making HTTP requests on the Internet. Far from it. Humans, with their web browsers, are the most common user agent making HTTP requests. Humans, however, are NOT locked into this predefined Endpoint URL contract that RESTful APIs are. What makes humans so special? Well, they’re able to read content, click links for headings which look interesting, and in general explore a website and interpret content to get to where they want to go. If a URL changes, a human is not affected (unless, that is, they bookmarked a page, in which case they go to the homepage and find a new route to their beloved data)._
 
+现在，API的使用者已经只是通过用户代理的用户，这些用户代理在因特网中可以发送`HTTP`请求。也就是人，通过他们的web浏览器，而这些浏览器正是可以发送请求的用户代码。然而对于人来讲，并不会仅仅局限于预先定义好的协议里。是什么让人如此特别？好吧，那是因为人有能力去阅读这些内容，通过点击看上去很有趣的链接。然后在通常情况下，浏览一个网站，网站中的内容就是他们想要去访问的地方。如果一个`URL`发生了改变，不会影响到人到这些内容的阅读(除非他们存档了一个页面，如果该页面的URL发生改变，那么他们就需要去主页，重新打到指定到喜爱内容的路由)。 
 
+_The Hypermedia API concept works the same way a human would. Requesting the Root of the API returns a listing of URLs which point perhaps to each collection of information, and describing each collection in a way which the Consumer can understand. Providing IDs for each resource isn’t important (or necessarily required), as long as a URL is provided._
 
+`超媒体API`的概念工作起来，更像是人类思考的方式。请求`API`的根路径，返回`URL`的列表，其中的每一条都分别指向不同的集合信息，并以用户能理解的方式来描述这些信息。为每个资源提供一个`ID`必不显得特别重要(或者也可能是必须的)，只要提供一个`URL`就行。
+
+_With the Consumer of a Hypermedia API crawling links and gathering information, URLs are always up-to-date within responses, and do not need to be known beforehand as part of a contract. If a URL is ever cached, and a subsequent request returns a 404, the Consumer can simply go back to the root and discover the content again._
+
+当`超媒体API`的用户去访问这些链接，并去收集这些信息，`URL`作为返回结果，都是最新的，这些内容不需要作为协议的一部分，被用户提前知道。如果有一个`URL`被缓存，那么后续的请求会返回`404`，用户可以非常简单地回到根路径，再一次发现这些内容。
+
+_When retrieving a list of Resources within a Collection, an attribute containing a complete URL for the individual Resources are returned. When performing a POST/PATCH/PUT, the response can be a 3xx redirect to the complete Resource._
+
+当得到一个包含资源的集合，在返回中的不同资源，其中一个属性可以包含针对该资源的访问路径。当需要执行`POST/PATCH/PUT`操作时，响应可以做出一个重定向`3xx`操作，重定向到完整的资源。
+
+_JSON doesn’t quite give us the semantics we need for specifying which attributes are URLs, nor how URLs relate to the current document. HTML, as you can probably guess, does provide this information. We may very well see our APIs coming full circle and returning back to consuming HTML. Considering how far we’ve come with CSS, one day we may even see  it be common practice for APIs and Websites to use the exact same URLs and content._
+
+`JSON`不能完全能给我们指示出哪些属性是`URL`，也不能说明`URL`是如何关联到正确的文档。也许你可以猜到，`HTML`可以为我们提供这些信息。也许我们能够看到`API`形成一个闭环，又重新回去使用`HTML`。考虑下，在不久的将来，我们会不会使用`CSS`这种方式，也许有一天，使用`CSS`来扩展我们的`URL`和文本会是一种普遍通用的方式。
+
+## _Documentation_
+
+## 文档
+
+_Honestly, if you don’t conform 100% to the criteria in this guide, your API will not necessarily be horrible. However, if you don’t properly document your API, nobody is going to know how to use it, and it WILL be a horrible API._
+
+实事求是地说，如果你不能保证你的项目百分百依照这个手册进行开发，你的`API`的也不会太糟糕。然而，如果你的没有合适的文档，没有人会知道怎么去使用它，那它就是一个糟糕的`API`。
+
+_Make your Documentation available to unauthenticated developers._
+
+让所有的开发都能获得你的`API`文档。
+
+_Do not use automatic documentation generators, or if you do, at least make sure you’re doctoring it up and making it presentable._
+
+不要使用文档生成工具，如果你做了，至少你需要将其进行注释，并做得像模像样。
+
+_Do not truncate example request and response bodies; show the whole thing. Use a syntax highlighter in your documentation._
+
+不要忽视请求与响应中的body体；将所有的信息都展示出来。在你的文档中，使用高亮的语法。
+
+_Document expected response codes and possible error messages for each endpoint, and what could have gone wrong to cause those error messages._
+
+在文档中，对于每个路由，要将能想到的响应码、有可能的错误信息展示出来，以及注明是什么导致这样的错误。
+
+_If you’ve got the spare time, build a developer API console so that developers can immediately experiment with your API. It’s not as hard as you might think and developers (both internal and third party) will love you for it!_
+
+如果你还有其他空闲的时间，可以开发一个`API`的控制台程序，这样开发都就可以立刻用你的`API`做一些测试。这些其实并没有你想像的那么难，开发者(不管是内部的还是第三方的)都因为这个而喜欢你。
+
+_Make sure your documentation can be printed; CSS is a powerful thing; don’t be afraid to hide that sidebar when the docs are printed. Even if nobody ever prints a physical copy, you’d be surprised at how many developers like to print to PDF for offline reading._
+
+确保你的文档是可以打印的。`CSS`是一很强大的东西；不要去担心在打印文档时如何去隐藏你的侧边栏。即使没有人打印成一个物理备份，但你可以惊奇，怎么会有那么多的开发者喜欢将文档打印成PDF，然后线下阅读。
+
+## _Errata: Raw HTTP Packet_
+
+## 原始的HTTP数据包
+
+_Since everything we do is over HTTP, I’m going to show you a dissection of an HTTP packet. I’m often surprised at how many people don’t know what these things look like! When the Consumer sends a Request to the Server, they provide a set of Key/Value pairs, called a Header, along with two newline characters, and finally the request body. This is all sent in the same packet._
+
+因为我们所有所做的东西，都是通过`HTTP`，接下来，我将向你展示一个HTTP数据包的构成。我也是经常好奇，会有多少人不知道HTTP数据包。当一个用户发送一个请求给服务端，需要提供包含键值对的集合，叫做消息头，每一个键值对占一行，最后才是请求体。这是所有被发送到服务器的数据包。
+
+_The server then responds in the say Key/Value pair format, with two newlines and then the response body. HTTP is very much a request/response protocol; there is no “Push” support (the Server sending data to the Consumer unprovoked), unless you use a different protocol such as Websockets._
+
+然后服务器依照这些键值对格式进行响应，同样返回一个消息头，再加个消息体。`HTTP`是请求/响应中用得最多的协议；这个协议没有推送的功能支持(在客户端不进行调用的情况下，服务端主要推送消息给用户)，除非你使用其它不同的协议，如`Websockets`。
+
+_When designing your API, you should be able to work with tools which allow you to look at raw HTTP packets. Consider using Wireshark, for example. Also, make sure you are using a framework / web server which allows you to read and change as many of these fields as possible._
+
+当你在设计你的`API`时，你应该有能力去使用一些工具，这些工具可以允许你查看`HTTP`数据包。可以考虑使用`Wireshark`。同样，确保你使用的框架/web服务器可以将这些键值对中的字段值进行修改。
+
+### _Example HTTP Request_
+
+```http
+POST /v1/animal HTTP/1.1
+Host: api.example.org
+Accept: application/json
+Content-Type: application/json
+Content-Length: 24
+
+{
+  "name": "Gir",
+  "animal_type": 12
+}
+```
+
+### _Example HTTP Response_
+
+```http
+HTTP/1.1 200 OK
+Date: Wed, 18 Dec 2013 06:08:22 GMT
+Content-Type: application/json
+Access-Control-Max-Age: 1728000
+Cache-Control: no-cache
+
+{
+  "id": 12,
+  "created": 1386363036,
+  "modified": 1386363036,
+  "name": "Gir",
+  "animal_type": 12
+}
+```
