@@ -38,7 +38,7 @@ _Here’s a few of the important terms I will use throughout the course of this 
 * _**URL Segment**: A slash-separated piece of information in the URL._
 
 
-* _**Resource**：一个对象的实例，比如，一个动物`animal`
+* **Resource**：一个对象的实例，比如，一个动物`animal`
 * **Collection**：两种类型对象的命令，比如动物集合`animals`
 * **HTTP**：网络间通信的协议
 * **Consumer**：可以发送HTTP请求的客户端应用
@@ -120,7 +120,7 @@ _Remember than an API is a published contract between a Server and a Consumer. I
 
 _As a side note, if you are simply ADDING new features to your API, such as new attributes on a Resource (which are not required and the Resource will function without), or if you are ADDING new Endpoints, you do not need to increment your API version number since these changes do not break backwards compatibility. You will want to update your API Documentation (your Contract), of course._
 
-从另一个侧面说明，如果你对你的API只是简单地加了新的特性，比如一个资源的新的属性(这里的属性不是必选的，你的资源没有这个属性依旧可以正常使用)，再比如你新增了一个路由，你不需要对你的API版本进行更新，因为这些改变并没有破坏向后兼容性。当然，你还是需要更新你的API文档(你和客户端遵守的协议)。
+从另一个侧面说明，如果你对你的API只是简单地加了新的特性，比如一个资源的新的属性(这里的属性不是必选的，你的资源没有这个属性依旧可以正常使用)，再比如你新增了一个路由端点，你不需要对你的API版本进行更新，因为这些改变并没有破坏向后兼容性。当然，你还是需要更新你的API文档(你和客户端遵守的协议)。
 
 _Over time you can deprecate old versions of the API. To deprecate a feature doesn’t mean to shut if off or diminish the quality of it, but to tell Consumers of your API that the older version will be removed on a specific date and that they should upgrade to a newer version._
 
@@ -136,7 +136,7 @@ _A good RESTful API design will keep track of the version in the URL. The other 
 
 _Keep track of the version/endpoints of your API being used by Consumers. This can be as simple as incrementing an integer in a database each time a request is made. There are many reasons that keeping track of API Analytics is a good idea, for example, the most commonly used API calls should be made efficient._
 
-对已经被用户使用的API，需要对它的版本/路由进行控制、追踪。这个非常容易实现，就好像每次发生一个请求，在数据库中进行自增。对API进行追踪分析是一个非常好的主意，也有很多其他的理由。比如，使用率最频繁的API应尽可能的高性能。
+对已经被用户使用的API，需要对它的版本/路由端点进行控制、追踪。这个非常容易实现，就好像每次发生一个请求，在数据库中进行自增。对API进行追踪分析是一个非常好的主意，也有很多其他的理由。比如，使用率最频繁的API应尽可能的高性能。
 
 _For the purposes of building an API which Third Party Developers will love, the most important thing is that when you do deprecate a version of your API, you can actually contact developers using deprecated API features. This is the perfect way to remind them to upgrade before you kill the old API version._
 
@@ -170,7 +170,7 @@ _If you anticipate your API will never grow to be that large, or you want a much
 
 _It’s a good idea to have content at the root of your API. Hitting the root of GitHub’s API returns a listing of endpoints, for example. Personally, I’m a fan of having the root URL give information which a lost developer would find useful, e.g., how to get to the developer documentation for the API._
 
-让你的API的根路径中包含内容是一个很好的主意。点击`GitHub`根路径的API，将会返回一个路由的列表。再比如，作为私人的，在根路径中加入一些帮助信息，让不知所措的开发者找到有用的信息，我是这种方法的支持者。
+让你的API的根路径中包含内容是一个很好的主意。点击`GitHub`根路径的API，将会返回一个路由端点的列表。再比如，作为私人的，在根路径中加入一些帮助信息，让不知所措的开发者找到有用的信息，我是这种方法的支持者。
 
 _Also, notice the HTTPS prefix. As a good RESTful API, you must host your API behind HTTPS._
 
@@ -179,15 +179,15 @@ _Also, notice the HTTPS prefix. As a good RESTful API, you must host your API be
 
 ## _Endpoints_
 
-## 路由
+## 路由端点
 
 _An Endpoint is a URL within your API which points to a specific Resource or a Collection of Resources._
 
-一个路由就一个`URL`路径，它标识着一个特定的资源，或者一个资源的集合。
+一个路由端点就一个`URL`路径，它标识着一个特定的资源，或者一个资源的集合。
 
 _If you were building a fictional API to represent several different Zoo’s, each containing many Animals (with an animal belonging to exactly one Zoo), employees (who can work at multiple zoos) and keeping track of the species of each animal, you might have the following endpoints:_
 
-如果你现在要为几个不同的动物园及其中的员工构建一个虚拟的`API`，每个动物园都包含许多动物(一个动物只属于一个动物园)，对不同种类的动物进行跟踪，你可能会设计出下面几个路由：
+如果你现在要为几个不同的动物园及其中的员工构建一个虚拟的`API`，每个动物园都包含许多动物(一个动物只属于一个动物园)，对不同种类的动物进行跟踪，你可能会设计出下面几个路由端点：
 
 * https://api.example.com/v1/**zoos**
 * https://api.example.com/v1/**animals**
@@ -196,7 +196,7 @@ _If you were building a fictional API to represent several different Zoo’s, ea
 
 _When referring to what each endpoint can do, you’ll want to list valid HTTP Verb and Endpoint combinations. For example, here’s a semi-comprehensive list of actions one can perform with our fictional API. Notice that I’ve preceded each endpoint with the HTTP Verb, as this is the same notation used within an HTTP Request header._
 
-当要指出每一个路由具体能做什么的时候，你需要将`HTTP`动作与路由进行结合，并将其展示出来。比如，通过你虚拟的`API`，下面这些动作都是可以去执行的。注意，我在每个路由前都加上了`HTTP`的动作，这些动作和在`HTTP`请求中的动作是一样的。
+当要指出每一个路由端点具体能做什么的时候，你需要将`HTTP`动作与路由端点进行结合，并将其展示出来。比如，通过你虚拟的`API`，下面这些动作都是可以去执行的。注意，我在每个路由端点前都加上了`HTTP`的动作，这些动作和在`HTTP`请求中的动作是一样的。
 
 * _GET /zoos: List all Zoos (ID and Name, not too much detail)_
 * _POST /zoos: Create a new Zoo_
@@ -246,7 +246,7 @@ _In the above list, ZID means Zoo ID, AID means Animal ID, EID means Employee ID
 
 _I’ve left out the common API URL prefix in the above examples for brevity. While this can be fine during communications, in your actual API documentation, you should always display the full URL to each endpoint (e.g. GET http://api.example.com/v1/animal_type/ATID)._
 
-为了简洁起见，对于每一个`API`都省略了前缀。当然这些问题可以在交流中协定好，在你真实的API文档中，你总是需要为每一个路由展示其全路径(如，GET http://api.example.com/v1/animal_type/ATID)。
+为了简洁起见，对于每一个`API`都省略了前缀。当然这些问题可以在交流中协定好，在你真实的API文档中，你总是需要为每一个路由端点展示其全路径(如，GET http://api.example.com/v1/animal_type/ATID)。
 
 _Notice how the relationships between data is displayed, specifically the many to many relationships between employees and zoos. By adding an additional URL segment, one can perform more specific interactions. Of course there is no HTTP verb for “FIRE”-ing an employee, but by performing a DELETE on an Employee located within a Zoo, we’re able to achieve the same effect._
 
@@ -284,7 +284,7 @@ _Filtering is mostly useful for performing GETs on Collections of resources. Sin
 
 _Some of these filterings can be redundant with endpoint URLS. For example I previously mentioned GET /zoo/ZID/animals. This would be the same thing as GET /animals?zoo_id=ZID. Dedicated endpoints being made available to the Consumer will make their lives easier, this is especially true with requests you anticipate they will make a lot. In the documentation, mention this redundancy so that Third Party Developers aren’t left wondering if differences exist._
 
-类似的一些过滤操作与路由`URL`的功能会有冗余。比如，刚才我提到的`GET /zoo/ZID/animals`。它和`GET /animals?zoo_id=ZID`是相同的东西。确保用户有专门的、可用的路由，也会让这些路由更早的被使用。你希望用户尽可能多访问的路由，这一点是特别有用的。在文档中，需要提到个别路由的冗余，这样第三方开发者对这些不同之处就不会感到迷惑。
+类似的一些过滤操作与路由端点`URL`的功能会有冗余。比如，刚才我提到的`GET /zoo/ZID/animals`。它和`GET /animals?zoo_id=ZID`是相同的东西。确保用户有专门的、可用的路由端点，也会让这些路由端点更早的被使用。你希望用户尽可能多访问的路由端点，这一点是特别有用的。在文档中，需要提到个别路由端点的冗余，这样第三方开发者对这些不同之处就不会感到迷惑。
 
 _Also, this goes without saying, but whenever you perform filtering or sorting of data, make sure you white-list the columns for which the Consumer can filter and sort by. We don’t want any database errors being sent to Consumers!_
 
@@ -380,7 +380,7 @@ _Note that when a Consumer creates a Resource, they usually do not know the ID o
 
 _Most of the time a Server will want to know exactly who is making which Requests. Sure, some APIs provide endpoints to be consumed by the general (anonymous) public, but most of the time work is being perform on behalf of someone._
 
-绝大部分的时候，作为服务器希望能够知道，谁发送了这些请求。所以，一些`APIS`会提供一些可以被匿名访问的路由，但服务器在绝大部分运行时间内，是明确知道是谁进行了一系列的操作。
+绝大部分的时候，作为服务器希望能够知道，谁发送了这些请求。所以，一些`APIS`会提供一些可以被匿名访问的路由端点，但服务器在绝大部分运行时间内，是明确知道是谁进行了一系列的操作。
 
 _[OAuth 2.0](https://tools.ietf.org/html/rfc6749) provides a great way of doing this. With each Request, you can be sure you know which Consumer is making requests, which User they are making requests on behalf of, and provides a (mostly) standardized way of expiring access or allowing Users to revoke access from a Consumer, all without the need for a third-party consumer to know the Users login credentials._
 
@@ -460,7 +460,7 @@ _Do not truncate example request and response bodies; show the whole thing. Use 
 
 _Document expected response codes and possible error messages for each endpoint, and what could have gone wrong to cause those error messages._
 
-在文档中，对于每个路由，要将能想到的响应码、有可能的错误信息展示出来，以及注明是什么导致这样的错误。
+在文档中，对于每个路由端点，要将能想到的响应码、有可能的错误信息展示出来，以及注明是什么导致这样的错误。
 
 _If you’ve got the spare time, build a developer API console so that developers can immediately experiment with your API. It’s not as hard as you might think and developers (both internal and third party) will love you for it!_
 
