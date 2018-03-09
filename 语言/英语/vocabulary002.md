@@ -91,3 +91,4 @@
 |[obstacle](https://dictionary.cambridge.org/dictionary/english/obstacle?q=obstacle+)|障碍|
 |[irrelevant](https://dictionary.cambridge.org/dictionary/english/irrelevant)|不相关的|
 |[exhaustive](https://dictionary.cambridge.org/dictionary/english/exhaustive?q=exhaustive+)|详尽的、全面的|
+|[improper]()|不恰当的，不合适的|

@@ -64,7 +64,7 @@ _Occasionally, a Collection can represent a database table, and a Resource can r
 
 _There are also many parts of your service which you SHOULD NOT expose via API at all. A common example is that many APIs will not allow third parties to create users._
 
-你服务中当然也存在一部分的功能不应用暴露在API中。一个通用的例子，许多API服务中是不允许第三方开发者去创建用户。
+你的服务中当然也存在一部分的功能不能暴露在API中。一个常见的例子，许多API服务中是不允许第三方开发者去创建用户。
 
 ## Verbs
 
