@@ -82,3 +82,6 @@
 |[hard-line](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/hard-line)|强硬的、不妥协的|
 |[alien](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/alien)|外国的、异族的|
 |[embarrassment](https://dictionary.cambridge.org/dictionary/english-chinese-simplified/embarrassment?q=embarrassments)|尴尬，窘迫；局促不安；令人尴尬的事|
+|[addict]()|沉溺于不良嗜好的人|
+|[adequate|足够的、合乎需要的|
+
