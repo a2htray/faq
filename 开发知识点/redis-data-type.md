@@ -422,3 +422,66 @@ _The above combination adds a new element and takes only the 1000 newest element
 _Note: while LRANGE is technically an O(N) command, accessing small ranges towards the head or the tail of the list is a constant time operation._
 
 注意：`LRANGE`是一个时间复杂度为`O(N)`的命令，从首部还尾部访问一个区间的元素是一个固定时间的操作。
+
+## Blocking operations on lists
+
+## List的锁操作
+
+_Lists have a special feature that make them suitable to implement queues, and in general as a building block for inter process communication systems: blocking operations._
+
+列表有一个特殊的特性，使它们适合于实现队列，并且经常作为进程间通信系统的构造锁芯，那就是锁操作。
+
+_Imagine you want to push items into a list with one process, and use a different process in order to actually do some kind of work with those items. This is the usual producer / consumer setup, and can be implemented in the following simple way:_
+
+想像一下，在其中一个进程中，你向列表新加一些元素，然后使用不同的进程，利用这些元素执行某些工作。这个就是很普通的`生产者/消费者`的模式，可以用下面简单的方法实现：
+
+* _To push items into the list, producers call LPUSH._
+* _To extract / process items from the list, consumers call RPOP._
+
+* 生产者使用`LPUSH`向列表新加数据
+* 消费者使用`RPOP`来提取并处理列表中的数据
+
+_However it is possible that sometimes the list is empty and there is nothing to process, so RPOP just returns NULL. In this case a consumer is forced to wait some time and retry again with RPOP. This is called polling, and is not a good idea in this context because it has several drawbacks:_
+
+然而，有可能在某些时刻，列表是空的，那就没有数据需要处理，所以`RPOP`会返回`NULL`。在这种情况下，消费者被强制等待一段时间，并不断重新使用`RPOP`来获取数据。这个就是叫做轮询，在执行环境中，这是种不好的方法，因为这种方式存在几个缺点：
+
+* _Forces Redis and clients to process useless commands (all the requests when the list is empty will get no actual work done, they'll just return NULL)._
+* _Adds a delay to the processing of items, since after a worker receives a NULL, it waits some time. To make the delay smaller, we could wait less between calls to RPOP, with the effect of amplifying problem number 1, i.e. more useless calls to Redis._
+
+* `Redis`和客户端强制执行了没用的命令(当列表为空的时候，所有的请求都返回NULL，没有做任何实际的工作)
+* 给处理数据的进程增加一个延时时间，因为在一台`worker`收到`NULL`时，他需要等待一段时间。为了让延时时间短点，我们可以设置一个较短的延时时间，但带来的影响就如#1中描述的那样，即对`Redis`执行了更多无用的命令。
+
+_So Redis implements commands called BRPOP and BLPOP which are versions of RPOP and LPOP able to block if the list is empty: they'll return to the caller only when a new element is added to the list, or when a user-specified timeout is reached._
+
+所以`Redis`实现了`BRPOP`和`BLPOP`两个命令，分别是`RPOP`和`LPOP`的变体，当列表为空的时间，可以用来阻塞进程。当列表中加入新的元素或过了用户设置的超时时间，才会给调用才返回信息。
+
+_This is an example of a BRPOP call we could use in the worker:_
+
+下面是在`worker`机上调用`BRPOP`的示例：
+
+```redis
+> brpop tasks 5
+1) "tasks"
+2) "do_something"
+```
+
+_It means: "wait for elements in the list tasks, but return if after 5 seconds no element is available"._
+
+他的意思是：等待一个需要弹出的元素，但在5秒后还是没有有效元素就返回
+
+_Note that you can use 0 as timeout to wait for elements forever, and you can also specify multiple lists and not just one, in order to wait on multiple lists at the same time, and get notified when the first list receives an element._
+
+注意，你可以设置超时时间为`0`，让这个任务一直在
+
+_A few things to note about BRPOP:_
+
+关于`BRPOP`，有一些东西值得注意：
+
+* _Clients are served in an ordered way: the first client that blocked waiting for a list, is served first when an element is pushed by some other client, and so forth._
+* _The return value is different compared to RPOP: it is a two-element array since it also includes the name of the key, because BRPOP and BLPOP are able to block waiting for elements from multiple lists._
+* _If the timeout is reached, NULL is returned._
+
+_There are more things you should know about lists and blocking ops. We suggest that you read more on the following:_
+
+* _It is possible to build safer queues or rotating queues using RPOPLPUSH._
+* _There is also a blocking variant of the command, called BRPOPLPUSH._
