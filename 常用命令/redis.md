@@ -56,7 +56,7 @@ OK
 (nil)
 ```
 
-## INCR
+## INCR - Increase
 
 > 值自增加1
 
@@ -69,7 +69,7 @@ OK
 "101"
 ```
 
-## GETSET
+## GETSET - Get And Set
 
 > 设置一个新的值，并将旧结果返回
 
@@ -82,7 +82,7 @@ OK
 "new"
 ```
 
-## MSET
+## MSET - Multiple Set
 
 > 设置多个key
 
@@ -99,7 +99,7 @@ OK
 3) "3"
 ```
 
-## MGET
+## MGET - Multiple Get
 
 > 读取多个key
 
@@ -129,7 +129,7 @@ OK
 (integer) 0
 ```
 
-## DEL
+## DEL - Delete
 
 > 删除指定key
 
@@ -172,7 +172,7 @@ OK
 (nil)
 ```
 
-## LPUSH
+## LPUSH - List Push
 
 > 首部新增一个元素，返回插入后列表的长度
 
@@ -208,7 +208,7 @@ OK
 8) "1"
 ```
 
-### RPUSH
+### RPUSH - Right Push
 
 > 尾部新增一个元素，返回插入后列表的长度
 
@@ -228,7 +228,7 @@ OK
 4) "B"
 ```
 
-## RPOP
+## RPOP - Right Pop
 
 > 移除一个元素，并返回该元素
 
@@ -245,7 +245,7 @@ OK
 5) "e"
 ```
 
-## LTRIM
+## LTRIM - List Trim
 
 > 截取列表，设置指定区间内的元素为列表的新值
 
@@ -260,4 +260,138 @@ OK
 3) "5"
 4) "4"
 5) "3"
+```
+
+## HMSET - Hash Multiple Set
+
+> 创建哈希
+
+```redis
+> HMSET grade:1 number 1001 total 54 floor 4
+OK
+```
+
+## HGET - Hash Get
+ 
+> 读取特定信息
+
+```redis
+> HMSET grade:1 number 1001 total 54 floor 4
+OK
+> HGET grade:1 number
+"1001"
+```
+
+## HGETALL - Hash Get All
+
+> 取哈希所有信息
+
+```redis
+> HMSET grade:1 number 1001 total 54 floor 4
+OK
+> HGETALL grade:1
+1) "number"
+2) "1001"
+3) "total"
+4) "54"
+5) "floor"
+6) "4"
+```
+
+## HINCRBY - Hash Increase By
+
+> 特定字段自增，需要两个参数
+
+```redis
+> HMSET grade:1 number 1001 total 54 floor 4
+OK
+> HINCRBY grade:1 number 10
+(integer) 1011
+```
+
+## SADD - Set Add
+
+> 集合增加元素
+
+```redis
+> SADD myset 1 2 3
+(integer) 3
+> SMEMBERS myset
+1. 3
+2. 1
+3. 2
+```
+
+## SMEMBERS - Set Members
+
+> 取集合元素
+
+```redis
+> SADD set:1 a 1 b 2 c 3
+(integer) 6
+> SMEMBERS set:1
+1) "b"
+2) "1"
+3) "a"
+4) "c"
+5) "3"
+6) "2"
+```
+
+## SISMEMBER - Set Is Member
+
+> 判断集合中是否存在特定元素
+
+```redis
+> SADD set:1 a 1 b 2 c 3
+(integer) 6
+> SMEMBERS set:1
+1) "b"
+2) "1"
+3) "a"
+4) "c"
+5) "3"
+6) "2"
+> SISMEMBER set:1 a
+(integer) 1
+```
+
+## SINTER - Set Intersection
+
+> 集合取交集操作
+
+```redis
+> SADD set:11 a b c
+(integer) 3
+> SADD set:12 b c d
+(integer) 3
+> SINTER set:11 set:12
+1) "b"
+2) "c"
+```
+
+## SPOP - Set Pop
+
+> 随机从集合中弹出一个元素，集合中，该元素被删除
+
+```redis
+> SADD set:13 a b a b
+(integer) 2
+> SPOP set:13
+"b"
+> SCARD set:13
+1
+```
+
+## SRANDMEMBER - Set Random Member
+
+> 随机从集合中取一个元素，原集合不变
+
+```redis
+> SADD set:13 a b a b
+(integer) 2
+> SRANDMEMBER set:13
+"a"
+> SCARD set:13
+2
 ```
