@@ -166,3 +166,7 @@ ailing check to John Adams with salary 2400.0
 在编译阶段，编译器使用`Employee`中的`mailCheck()`让代码过了语句的验证，但在运行阶段，`JVM`还是选择调用`Salary`类中的`mailCheck()`方法。
 
 不管变量定义时，其类型为什么，在运行阶段中，覆写后的方法将会被调用
+
+## 出处
+
+tutorialspoint Java Ploymorphism [https://www.tutorialspoint.com/java/java_polymorphism.htm](https://www.tutorialspoint.com/java/java_polymorphism.htm)
