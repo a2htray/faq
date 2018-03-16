@@ -42,6 +42,8 @@
 
 [教程 https://code.tutsplus.com (什么都有、很全)](https://code.tutsplus.com)
 
+[数字海洋 (强烈推荐)](https://www.digitalocean.com/)
+
 ### 杂
 
 [科学公园](http://www.ikexue.org)
