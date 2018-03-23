@@ -4,7 +4,9 @@
 ```bash
 docker run --name web-worker-01 -d nginx
 docker run --name web-worker-02 -d nginx
-docker run --name web-scheduler --link web-worker-01:web-worker-01 --link web-worker-02:web-worker-02 -p 90:80 -d nginx
+docker run --name web-scheduler \
+--link web-worker-01:web-worker-01 \
+--link web-worker-02:web-worker-02 -p 90:80 -d nginx
 ```
 
 使用`docker run`启动三个容器服务，两台`worker`，对外提供服务的命名为`web-scheduler`，并使用`--link`选项，使用在`scheduler`中可以访问到两台`worker`。如下图所示：
