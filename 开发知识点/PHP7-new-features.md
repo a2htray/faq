@@ -144,6 +144,10 @@ $last = $a ?? $b ?? $c ?? ...
 
 最终遇到不为`null`的为止。
 
+## 随机数增强
+
+使用操作系统中的随机数生成，更安全
+
 ## 参考
 
 * [哈希表-新实现](http://nikic.github.io/2014/12/22/PHPs-new-hashtable-implementation.html)
