@@ -31,6 +31,8 @@
 
 [Tutorialspoint Kotlin `想学`](https://www.tutorialspoint.com/kotlin/index.htm)
 
+[ES6 特性](http://es6-features.org/#Constants)
+
 [CSS 文章](https://css-tricks.com/)
 
 ### 工具
@@ -46,6 +48,10 @@
 [教程 https://code.tutsplus.com (什么都有、很全)](https://code.tutsplus.com)
 
 [数字海洋 (强烈推荐)](https://www.digitalocean.com/)
+
+[数据库](https://www.quackit.com/database/tutorial/)
+
+
 
 ### 杂
 
