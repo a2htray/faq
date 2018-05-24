@@ -35,6 +35,8 @@
 
 [CSS 文章](https://css-tricks.com/)
 
+[PyQt 5](https://pythonspot.com/en/pyqt5/)
+
 ### 工具
 
 [wordreference 在线英语词典](http://www.wordreference.com/enzh/)
